@@ -1,0 +1,44 @@
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h5 class=" title">Add New Client</h5>
+        </div>
+        <div class=" card-body">
+
+          <div class="example-container">
+            <h2>Exercises</h2>
+            <div cdkDropList #exercisesList="cdkDropList" [cdkDropListData]="exercises" class="example-list"
+              (cdkDropListDropped)="drop($event)">
+              <div class="example-box" *ngFor="let item of exercises" cdkDrag>{{item.name}}
+                <button (click)='copyObject(item)'>+</button>
+                <button (click)='deleteObject(item)'>x</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="example-container">
+            <h2>Training: {{selectedName}}</h2>
+            <div cdkDropList #trainingsList="cdkDropList" [cdkDropListData]="selectedTraining"
+              [cdkDropListConnectedTo]="[exercisesList]" class="example-list" (cdkDropListDropped)="drop($event)">
+              <div class="example-box" *ngFor="let e of selectedTraining" cdkDrag>{{e.name}}</div>
+            </div>
+          </div>
+
+          <div class="example-container">
+            <h2>Copy</h2>
+            <div cdkDropList #copyList="cdkDropList" [cdkDropListData]="copy" [cdkDropListConnectedTo]="[trainingsList]"
+              class="example-list" (cdkDropListDropped)="drop($event)">
+              <div class="example-box" *ngFor="let c of copy" cdkDrag>{{c.name}}</div>
+            </div>
+          </div>
+
+          <div *ngFor="let t of trainings; index as i">
+            <button (click)="select(t.id)">{{t.name}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
