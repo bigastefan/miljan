@@ -50,9 +50,6 @@ export class DragableComponent implements OnInit {
   }
 
   copyObject(item: Exercise) {
-    const c = new Exercise(item.id, item.name, item.bodyPart);
-    this.copy.push(c);
-    console.log(c);
   }
 
   deleteObject(item: Exercise) { // Exercise

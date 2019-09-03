@@ -1,12 +1,15 @@
+import { MuscleGroup } from './muscleGroup';
+
 export class Exercise {
-    id: number;
-    name: string;
-    bodyPart: string;
-  
-    constructor(id: number, name: string, bodyPart: string) {
+  id: number;
+  name: string;
+  exerciseImagePath: string;
+  muscleGroup: MuscleGroup;
+
+  constructor(id: number, name: string, exerciseImagePath: string, muscleGroup: MuscleGroup) {
       this.id = id;
       this.name = name;
-      this.bodyPart = bodyPart;
-    }
+      this.exerciseImagePath = exerciseImagePath;
+      this.muscleGroup = muscleGroup;
   }
-  
+}
