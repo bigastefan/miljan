@@ -16,7 +16,7 @@
                   <th>City</th>
                   <th>Phone</th>
                   <th>Training</th>
-                  <th>Edit</th>
+                  <th>Settings</th>
                 </tr>
               </thead>
               <tbody>
@@ -27,7 +27,15 @@
                   <td>{{user.phone}}</td>
                   <td>{{user.training}}</td>
                   <td>
-                    <div class="table-icon" (click)="edit()"><i class=" tim-icons icon-pencil"> </i></div>
+                    <button type="button" rel="tooltip" class="btn btn-info btn-sm btn-round btn-icon">
+                      <i class="tim-icons icon-single-02"></i>
+                    </button>
+                    <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-round btn-icon">
+                      <i class="tim-icons icon-settings"></i>
+                    </button>
+                    <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon">
+                      <i class="tim-icons icon-simple-remove"></i>
+                    </button>
                   </td>
                 </tr>
               </tbody>

@@ -27,7 +27,7 @@ export class DragableComponent implements OnInit {
     console.log(this.bundles);
 
     console.log(this.exer.connectedTo.valueOf());
-    this.select(1);
+    // this.select(1);
   }
 
   drop(event: CdkDragDrop<{}[]>) {
