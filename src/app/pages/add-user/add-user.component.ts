@@ -8,32 +8,31 @@ import { FormControl, FormGroup, Validators, FormBuilder, FormsModule, FormArray
 })
 export class AddUserComponent implements OnInit {
 
-  profileForm = this.fb.group({
+  clientForm = this.fb.group({
     firstName: ['', Validators.required],
-    lastName: [''],
-    address: this.fb.group({
-      street: [''],
-      city: [''],
-      state: [''],
-      zip: ['']
-    }),
-    aliases: this.fb.array([
-      this.fb.control('')
-    ])
+    lastName: ['', Validators.required],
+    birthday: ['', Validators.required],
+    gender: ['', Validators.required],
+    phone: ['', Validators.required],
+    weight: ['', Validators.required],
+    username: ['', Validators.required],
+    email: ['', Validators.required],
+    city: ['', Validators.required],
+    country: ['', Validators.required]
   });
 
   ngOnInit(): void {
   }
 
   get aliases() {
-    return this.profileForm.get('aliases') as FormArray;
+    return this.clientForm.get('aliases') as FormArray;
   }
 
   constructor(private fb: FormBuilder) { }
 
 
   updateProfile() {
-    this.profileForm.patchValue({
+    this.clientForm.patchValue({
       firstName: 'Nancy',
       address: {
         street: '123 Drew Street'
@@ -47,7 +46,7 @@ export class AddUserComponent implements OnInit {
 
   onSubmit() {
     // TODO: Use EventEmitter with form value
-    console.warn(this.profileForm.value);
+    console.log({client: this.clientForm.value});
   }
 
 
